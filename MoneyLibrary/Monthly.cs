@@ -8,7 +8,7 @@ namespace MoneyLibrary
         {
             if (dayOfMonth > 28)
             {
-                throw new ArgumentException("В феврале иногда 28 дней");
+                throw new ArgumentException("February have 28 days");
             }
             
             DayOfMonth = dayOfMonth;
@@ -18,15 +18,7 @@ namespace MoneyLibrary
         
         public DateTime GetNextTime()
         {
-            var now = DateTime.Now;
-            if (now.Day >= DayOfMonth)
-            {
-                var month = now.Month + 1;
-                var year = month > 12 ? now.Year + 1 : now.Year;
-                return new DateTime(year, month, DayOfMonth);
-            }
-
-            return new DateTime(now.Year, now.Month, DayOfMonth);
+            return GetNextTime(DateTime.Now);
         }
         
         public DateTime GetNextTime(DateTime now)

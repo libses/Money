@@ -1,6 +1,6 @@
 namespace MoneyLibrary
 {
-    public interface IProfit
+    public interface ICashFlow
     {
         string Name { get; }
         string Description { get; }
