@@ -1,7 +1,14 @@
+using Ninject;
+
 namespace MoneyLibrary
 {
-    public class Handler
+    public class Handler : IHandler
     {
-        public readonly Repository Repository = new Repository();
+        public readonly IRepository Repository;
+
+        public Handler(IRepository repository)
+        {
+            Repository = repository;
+        }
     }
 }

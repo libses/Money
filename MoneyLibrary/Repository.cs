@@ -5,8 +5,12 @@ using System.Linq;
 
 namespace MoneyLibrary
 {
-    public class Repository
+    public class Repository : IRepository
     {
+        public Repository()
+        {
+        }
+
         public decimal MoneyAmount { get; private set; }
         
         public readonly List<IRegularCashFlow> RegularCashFlows = new List<IRegularCashFlow>();
